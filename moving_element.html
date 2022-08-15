@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Example!</title>
+
+  <!-- PyScript -->
+  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+  <py-env>
+    - paths:
+      - ./moving_element.py
+  </py-env>
+
+</head>
+
+<body>
+
+    <div id="div" style="position: absolute; width: 150px; height: 150px; left: 500px">
+      <button id="button">
+        <img src="imgs/King_Ndymario.png" alt="Ndymario" width="150" height="150" style="border-radius: 15%; position: absolute;">
+      </button>
+    </div>
+
+</body>
+</html>
+
+<py-script>
+from moving_element import moving_element
+
+# HTML Elements
+button = Element("button")
+element = Element("div")
+
+# Here's where the magic happens.
+pfp_element = moving_element(element, button, "click", 1, (10, 500), (0, 200))
+
+</py-script>
